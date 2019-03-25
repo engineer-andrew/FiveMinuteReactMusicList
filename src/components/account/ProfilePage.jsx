@@ -1,13 +1,11 @@
 import React from 'react';
+import Sidebar from '../shared/Sidebar';
 
-export default function ProfilePage(props) {
-  const { match } = props;
+export default function ProfilePage() {
   return (
-    <section className="page-content">
-      <div className="row">
-        <div className="col-sm-12 col-lg-8">This is the profile page.</div>
-        This is the profile page. The profile id is: {match.params.id}
-      </div>
-    </section>
+    <div className="row">
+      <div className="col-sm-12 col-lg-8">This is the profile page.</div>
+      <Sidebar />
+    </div>
   );
 }
