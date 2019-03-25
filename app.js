@@ -38,9 +38,9 @@ app.use(expressSession);
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', index);
 app.use('/api', api);
 app.use('/api/users', users);
+app.use('/*', index);
 
 // Configure Passport
 passport.use(new LocalStrategy(User.authenticate()));
