@@ -995,7 +995,7 @@ var _testcomponent2 = _interopRequireDefault(_testcomponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactDom.render)(_react2.default.createElement(_testcomponent2.default, null), document.querySelector('#react-app'));
+(0, _reactDom.render)(_react2.default.createElement(_testcomponent2.default, { headline: 'Test Headline', count: 1234, showCount: true }), document.querySelector('#react-app'));
 
 /***/ }),
 /* 15 */
@@ -18314,15 +18314,25 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function TestComponent() {
+function TestComponent(props) {
+  var headline = props.headline,
+      count = props.count,
+      showCount = props.showCount;
+
+
   return _react2.default.createElement(
     'div',
     null,
     _react2.default.createElement(
       'h1',
       null,
-      'React Test Component'
-    )
+      headline
+    ),
+    showCount ? _react2.default.createElement(
+      'p',
+      null,
+      count
+    ) : null
   );
 }
 
